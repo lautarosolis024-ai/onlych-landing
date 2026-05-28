@@ -1,36 +1,27 @@
-const backers = [
-  { name: 'Fundamental Labs', style: { fontFamily: 'Times New Roman, serif', fontWeight: 400, letterSpacing: '0.02em', fontSize: '14px' } },
-  { name: 'KUCOIN', style: { fontFamily: 'Arial Black, sans-serif', fontWeight: 900, letterSpacing: '0.08em', fontSize: '16px' } },
-  { name: 'NGC', style: { fontFamily: 'Impact, sans-serif', fontWeight: 700, letterSpacing: '0.05em', fontSize: '18px' } },
-  { name: 'NxGen', style: { fontFamily: 'Georgia, serif', fontWeight: 600, letterSpacing: '-0.02em', fontSize: '17px' } },
-  { name: 'Matter Labs', style: { fontFamily: 'Helvetica, sans-serif', fontWeight: 700, letterSpacing: '-0.01em', fontSize: '15px' } },
-  { name: 'DEXTools', style: { fontFamily: 'Verdana, sans-serif', fontWeight: 700, letterSpacing: '0.06em', fontSize: '14px', textTransform: 'uppercase' as const } },
-  { name: 'NGRAVE', style: { fontFamily: 'Courier New, monospace', fontWeight: 700, letterSpacing: '0.18em', fontSize: '14px' } },
-  { name: 'Polychain', style: { fontFamily: 'Palatino, serif', fontWeight: 500, letterSpacing: '0.03em', fontSize: '15px' } },
-];
+const clientLogos = Array.from({ length: 25 }, (_, i) => `/clients/client-${String(i + 1).padStart(2, '0')}.png`);
 
 export default function BackedBySection() {
   return (
-    <section className="bg-[#F5F5F5] px-6">
-      <div className="max-w-[88rem] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-center">
-        {/* Left label */}
-        <div>
-          <p className="text-black/70 text-base leading-relaxed">
-            Respaldado por marcas líderes y décadas de trayectoria.
+    <section className="bg-[#F5F5F5] px-6 py-16">
+      <div className="max-w-[88rem] mx-auto">
+        {/* Label */}
+        <div className="mb-10">
+          <p className="text-black/70 text-base leading-relaxed max-w-sm">
+            Empresas que confían en nosotros. Más de 20 años vistiendo las marcas más reconocidas de la Argentina.
           </p>
         </div>
 
-        {/* Right marquee */}
-        <div className="md:col-span-3 overflow-hidden">
+        {/* Marquee */}
+        <div className="overflow-hidden">
           <div className="backers-track">
-            {[...backers, ...backers].map((backer, i) => (
-              <span
+            {[...clientLogos, ...clientLogos].map((src, i) => (
+              <img
                 key={i}
-                className="mx-10 shrink-0 text-black/50 whitespace-nowrap"
-                style={backer.style}
-              >
-                {backer.name}
-              </span>
+                src={src}
+                alt={`Cliente ${i % clientLogos.length + 1}`}
+                className="mx-8 shrink-0 h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+                draggable={false}
+              />
             ))}
           </div>
         </div>

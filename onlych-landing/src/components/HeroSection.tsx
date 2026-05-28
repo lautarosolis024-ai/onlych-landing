@@ -1,13 +1,19 @@
 import { ArrowRight } from 'lucide-react';
 
-const brands = [
-  { name: 'Toyota', style: { fontFamily: 'Georgia, serif', fontWeight: 700, letterSpacing: '-0.02em', fontSize: '15px' } },
-  { name: 'SHELL', style: { fontFamily: 'Arial, sans-serif', fontWeight: 900, letterSpacing: '0.08em', fontSize: '13px', textTransform: 'uppercase' as const } },
-  { name: 'Quilmes', style: { fontFamily: 'Trebuchet MS, sans-serif', fontWeight: 600, letterSpacing: '0.01em', fontSize: '15px', fontStyle: 'italic' as const } },
-  { name: 'Globant', style: { fontFamily: 'Courier New, monospace', fontWeight: 700, letterSpacing: '0.12em', fontSize: '13px', textTransform: 'uppercase' as const } },
-  { name: 'Arcor', style: { fontFamily: 'Palatino, Book Antiqua, serif', fontWeight: 400, letterSpacing: '-0.01em', fontSize: '16px' } },
-  { name: 'MercadoLibre', style: { fontFamily: 'Impact, Arial Narrow, sans-serif', fontWeight: 400, letterSpacing: '0.04em', fontSize: '14px' } },
-  { name: 'YPF', style: { fontFamily: 'Verdana, sans-serif', fontWeight: 700, letterSpacing: '-0.03em', fontSize: '13px' } },
+// Use a subset of key client logos for the hero marquee
+const heroLogos = [
+  '/clients/client-01.png',
+  '/clients/client-02.png',
+  '/clients/client-03.png',
+  '/clients/client-04.png',
+  '/clients/client-05.png',
+  '/clients/client-06.png',
+  '/clients/client-07.png',
+  '/clients/client-08.png',
+  '/clients/client-09.png',
+  '/clients/client-10.png',
+  '/clients/client-11.png',
+  '/clients/client-12.png',
 ];
 
 export default function HeroSection() {
@@ -51,17 +57,17 @@ export default function HeroSection() {
             </span>
           </a>
 
-          {/* Brand Marquee */}
-          <div className="mt-24 w-full max-w-md overflow-hidden">
-            <div className="marquee-track">
-              {[...brands, ...brands].map((brand, i) => (
-                <span
+          {/* Client Logo Marquee */}
+          <div className="mt-24 w-full max-w-lg overflow-hidden">
+            <div className="marquee-track items-center">
+              {[...heroLogos, ...heroLogos].map((src, i) => (
+                <img
                   key={i}
-                  className="mx-7 shrink-0 text-black/60 whitespace-nowrap"
-                  style={brand.style}
-                >
-                  {brand.name}
-                </span>
+                  src={src}
+                  alt={`Cliente ${(i % heroLogos.length) + 1}`}
+                  className="mx-5 shrink-0 h-8 w-auto object-contain opacity-60 hover:opacity-90 transition-opacity duration-300"
+                  draggable={false}
+                />
               ))}
             </div>
           </div>
