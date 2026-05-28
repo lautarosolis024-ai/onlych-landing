@@ -1,14 +1,15 @@
-import LogoIcon from './LogoIcon';
-
 export default function Navbar() {
   return (
     <nav className="absolute top-0 left-0 right-0 z-20 px-6 py-5">
       <div className="flex items-center justify-between">
         {/* Left: Logo */}
-        <div className="flex items-center gap-2">
-          <LogoIcon className="w-7 h-7 text-[#799b3d]" />
-          <span className="text-2xl font-medium tracking-tight text-black">OnlyCH</span>
-        </div>
+        <a href="#" className="flex items-center">
+          <img
+            src="/logo-onlych.png"
+            alt="OnlyCH Logo"
+            className="h-10 w-auto"
+          />
+        </a>
 
         {/* Center: Nav links */}
         <div className="hidden md:flex items-center gap-8">
