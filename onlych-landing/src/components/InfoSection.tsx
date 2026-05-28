@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function InfoSection() {
   return (
-    <section className="bg-[#F5F5F5] px-6 py-24">
+    <section id="nosotros" className="bg-[#F5F5F5] px-6 py-24">
       <div className="max-w-[88rem] mx-auto">
         {/* Row 1: Heading + Description */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-start">
@@ -14,7 +14,7 @@ export default function InfoSection() {
               Conocé OnlyCH.
             </h2>
             <a
-              href="#"
+              href="#contacto"
               className="inline-flex items-center gap-3 bg-black text-white text-base font-medium pl-8 pr-2 py-2 rounded-full hover:bg-gray-800 transition-colors duration-200"
             >
               Descubrí más

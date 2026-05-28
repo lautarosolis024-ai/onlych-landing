@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function UseCasesSection() {
   return (
-    <section className="bg-[#F5F5F5] px-6 py-24">
+    <section id="productos" className="bg-[#F5F5F5] px-6 py-24">
       <div className="max-w-[88rem] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
         {/* Left column */}
         <div className="md:pr-12 md:pt-2">
@@ -40,7 +40,9 @@ export default function UseCasesSection() {
               Potenciá la presencia de tu marca en ferias, convenciones y lanzamientos con productos promocionales que dejan huella en cada asistente.
             </p>
             <a
-              href="#"
+              href="https://wa.me/5491147730094?text=Hola%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20productos%20para%20eventos"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 group text-black font-medium hover:text-[#799b3d] transition-colors duration-200"
             >
               <span className="w-9 h-9 rounded-full bg-white/80 backdrop-blur flex items-center justify-center group-hover:bg-white transition-colors">

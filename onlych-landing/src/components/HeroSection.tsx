@@ -48,7 +48,9 @@ export default function HeroSection() {
             Productos promocionales con tu logo, listos para impulsar tu marca. Más de 20 años vistiendo empresas.
           </p>
           <a
-            href="#"
+            href="https://wa.me/5491147730094?text=Hola%2C%20me%20interesa%20solicitar%20un%20presupuesto"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-[#799b3d] text-white text-base md:text-lg font-medium pl-8 pr-2 py-2 rounded-full hover:bg-[#6a8a34] transition-colors duration-200"
           >
             Contactanos

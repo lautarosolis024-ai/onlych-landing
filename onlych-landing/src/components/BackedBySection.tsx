@@ -2,7 +2,7 @@ const clientLogos = Array.from({ length: 25 }, (_, i) => `/clients/client-${Stri
 
 export default function BackedBySection() {
   return (
-    <section className="bg-[#F5F5F5] px-6 py-16">
+    <section id="clientes" className="bg-[#F5F5F5] px-6 py-16">
       <div className="max-w-[88rem] mx-auto">
         {/* Label */}
         <div className="mb-10">
