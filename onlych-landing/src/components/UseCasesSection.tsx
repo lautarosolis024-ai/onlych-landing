@@ -12,7 +12,7 @@ const useCases = [
 
 export default function UseCasesSection() {
   return (
-    <section className="bg-white px-6 py-24">
+    <section className="bg-[#F5F5F5] px-6 py-24">
       <div className="max-w-[88rem] mx-auto">
         <div className="mb-16 max-w-2xl">
           <p className="text-[#799b3d] text-sm font-medium uppercase tracking-wider mb-3">Soluciones</p>
@@ -27,7 +27,7 @@ export default function UseCasesSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {useCases.map((uc) => (
             <div key={uc.title}
-              className="bg-[#F5F5F5] rounded-2xl p-8 flex flex-col justify-between min-h-[320px] hover:shadow-lg transition-shadow duration-300">
+              className="bg-white rounded-2xl p-8 flex flex-col justify-between min-h-[320px] hover:shadow-lg transition-shadow duration-300">
               <div>
                 <span className="text-4xl mb-4 block">{uc.icon}</span>
                 <h3 className="text-black text-2xl font-medium leading-snug mb-3"
