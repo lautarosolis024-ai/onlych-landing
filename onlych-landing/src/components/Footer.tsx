@@ -1,4 +1,5 @@
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
+import { PHONE_NUMBER, PHONE_DISPLAY_FULL, EMAIL, ADDRESS, INSTAGRAM_URL, LINKEDIN_URL, GOOGLE_MAPS_URL, WHATSAPP_BASE, WHATSAPP_MESSAGES } from '../constants';
 
 function InstagramIcon({ className = '' }: { className?: string }) {
   return (
@@ -22,124 +23,62 @@ function LinkedinIcon({ className = '' }: { className?: string }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2B2644] text-white">
+    <footer id="contacto" className="bg-[#2B2644] text-white">
       <div className="max-w-[88rem] mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Brand column */}
           <div className="md:col-span-1">
-            <img
-              src="/logo-onlych.png"
-              alt="OnlyCH Logo"
-              className="h-12 w-auto mb-6 brightness-0 invert"
-            />
+            <img src="/logo-onlych.png" alt="OnlyCH Logo" className="h-12 w-auto mb-6 brightness-0 invert" />
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
               Distribuidor oficial de merchandising y productos publicitarios. Más de 20 años vistiendo las marcas más reconocidas de la Argentina.
             </p>
           </div>
-
-          {/* Navegación */}
           <div>
             <h4 className="text-white font-medium text-sm uppercase tracking-wider mb-4">Navegación</h4>
             <ul className="space-y-3">
-              {[
-                { label: 'Productos', href: '#productos' },
-                { label: 'Nosotros', href: '#nosotros' },
-                { label: 'Clientes', href: '#clientes' },
-                { label: 'Contacto', href: '#contacto' },
-              ].map((link) => (
+              {[{ label: 'Productos', href: '#productos' }, { label: 'Nosotros', href: '#nosotros' },
+                { label: 'Clientes', href: '#clientes' }, { label: 'Contacto', href: '#contacto' }].map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-white/60 hover:text-[#799b3d] text-sm transition-colors duration-200"
-                  >
-                    {link.label}
-                  </a>
+                  <a href={link.href} className="text-white/60 hover:text-[#799b3d] text-sm transition-colors duration-200">{link.label}</a>
                 </li>
               ))}
             </ul>
           </div>
-
-          {/* Contacto */}
           <div>
             <h4 className="text-white font-medium text-sm uppercase tracking-wider mb-4">Contacto</h4>
             <ul className="space-y-4">
-              <li>
-                <a
-                  href="tel:+541147730094"
-                  className="flex items-start gap-3 text-white/60 hover:text-[#799b3d] text-sm transition-colors duration-200"
-                >
-                  <Phone className="w-4 h-4 mt-0.5 shrink-0" />
-                  <span>(+54 11) 4773-0094 / 0135</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:info@onlych.com.ar"
-                  className="flex items-start gap-3 text-white/60 hover:text-[#799b3d] text-sm transition-colors duration-200"
-                >
-                  <Mail className="w-4 h-4 mt-0.5 shrink-0" />
-                  <span>info@onlych.com.ar</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.google.com/maps/place/Av.+Ra%C3%BAl+Scalabrini+Ortiz+963,+Buenos+Aires"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start gap-3 text-white/60 hover:text-[#799b3d] text-sm transition-colors duration-200"
-                >
-                  <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-                  <span>Av. Raúl Scalabrini Ortiz 963, Buenos Aires</span>
-                </a>
-              </li>
+              <li><a href={`tel:${PHONE_NUMBER}`} className="flex items-start gap-3 text-white/60 hover:text-[#799b3d] text-sm transition-colors duration-200">
+                <Phone className="w-4 h-4 mt-0.5 shrink-0" /><span>{PHONE_DISPLAY_FULL}</span></a></li>
+              <li><a href={`mailto:${EMAIL}`} className="flex items-start gap-3 text-white/60 hover:text-[#799b3d] text-sm transition-colors duration-200">
+                <Mail className="w-4 h-4 mt-0.5 shrink-0" /><span>{EMAIL}</span></a></li>
+              <li><a href={GOOGLE_MAPS_URL} target="_blank" rel="noopener noreferrer"
+                className="flex items-start gap-3 text-white/60 hover:text-[#799b3d] text-sm transition-colors duration-200">
+                <MapPin className="w-4 h-4 mt-0.5 shrink-0" /><span>{ADDRESS}</span></a></li>
             </ul>
           </div>
-
-          {/* Redes */}
           <div>
             <h4 className="text-white font-medium text-sm uppercase tracking-wider mb-4">Seguinos</h4>
             <div className="flex items-center gap-4">
-              <a
-                href="https://www.instagram.com/onlych_ar/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#799b3d] transition-colors duration-200"
-                aria-label="Instagram"
-              >
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#799b3d] transition-colors duration-200" aria-label="Instagram">
                 <InstagramIcon className="w-5 h-5" />
               </a>
-              <a
-                href="https://www.linkedin.com/company/onlych/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#799b3d] transition-colors duration-200"
-                aria-label="LinkedIn"
-              >
+              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#799b3d] transition-colors duration-200" aria-label="LinkedIn">
                 <LinkedinIcon className="w-5 h-5" />
               </a>
             </div>
             <div className="mt-8">
-              <a
-                href="https://wa.me/5491147730094?text=Hola%2C%20me%20interesa%20solicitar%20un%20presupuesto"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#799b3d] text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-[#6a8a34] transition-colors duration-200"
-              >
-                <Phone className="w-4 h-4" />
-                Solicitar Presupuesto
+              <a href={`${WHATSAPP_BASE}${encodeURIComponent(WHATSAPP_MESSAGES.presupuesto)}`}
+                target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#799b3d] text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-[#6a8a34] transition-colors duration-200">
+                <MessageCircle className="w-4 h-4" /> Solicitar Presupuesto
               </a>
             </div>
           </div>
         </div>
-
-        {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/40 text-xs">
-            © {new Date().getFullYear()} OnlyCH. Todos los derechos reservados.
-          </p>
-          <p className="text-white/40 text-xs">
-            Merchandising & Productos Publicitarios — Buenos Aires, Argentina
-          </p>
+          <p className="text-white/40 text-xs">© {new Date().getFullYear()} OnlyCH. Todos los derechos reservados.</p>
+          <p className="text-white/40 text-xs">Merchandising & Productos Publicitarios — Buenos Aires, Argentina</p>
         </div>
       </div>
     </footer>

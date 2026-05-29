@@ -1,10 +1,37 @@
 @import "tailwindcss";
 
+/* ═══════════════════════════════════════════
+   OnlyCH Design Tokens & Base Styles
+   ═══════════════════════════════════════════ */
+
+@theme {
+  /* Brand Colors */
+  --color-brand: #799b3d;
+  --color-brand-hover: #6a8a34;
+  --color-brand-light: #799b3d15;
+  --color-dark: #2B2644;
+  --color-dark-hover: #1a1a30;
+  --color-surface: #F5F5F5;
+  --color-surface-alt: #FFFFFF;
+
+  /* Functional Colors */
+  --color-whatsapp: #25D366;
+  --color-whatsapp-hover: #1fb855;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Spacing Scale (8px grid) */
+  --spacing-section: 6rem;
+  --spacing-section-sm: 4rem;
+}
+
+/* Base Styles */
 html, body {
-  font-family: 'Inter', 'TT Norms Pro', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans);
   margin: 0;
   padding: 0;
-  background: #F5F5F5;
+  background: var(--color-surface);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
@@ -13,6 +40,10 @@ html, body {
 * {
   font-family: inherit;
 }
+
+/* ═══════════════════════════════════════════
+   Animation Tokens
+   ═══════════════════════════════════════════ */
 
 @keyframes marquee {
   0% { transform: translateX(0); }
@@ -24,6 +55,15 @@ html, body {
   100% { transform: translateX(-50%); }
 }
 
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ═══════════════════════════════════════════
+   Component Tokens
+   ═══════════════════════════════════════════ */
+
 .marquee-track {
   display: flex;
   width: max-content;
@@ -34,4 +74,24 @@ html, body {
   display: flex;
   width: max-content;
   animation: backers-marquee 30s linear infinite;
+}
+
+/* ═══════════════════════════════════════════
+   Consistent Section Spacing
+   ═══════════════════════════════════════════ */
+
+section {
+  padding-top: var(--spacing-section);
+  padding-bottom: var(--spacing-section);
+}
+
+/* ═══════════════════════════════════════════
+   Focus Styles (Accessibility)
+   ═══════════════════════════════════════════ */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+  border-radius: 9999px;
 }
